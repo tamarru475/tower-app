@@ -1,0 +1,8 @@
+.greeting {
+  padding-top: 3rem;
+  margin: 0 auto;
+}
+
+.greeting__greet {
+  text-align: center;
+}
