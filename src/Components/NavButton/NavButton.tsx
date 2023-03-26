@@ -1,18 +1,21 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React from 'react'
 
 interface NavButtonProps {
   isMenuOpen: boolean
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>
+  onNavButtonClick: () => void
 }
 
-const NavButton: React.FC<NavButtonProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+const NavButton: React.FC<NavButtonProps> = ({
+  isMenuOpen,
+  onNavButtonClick,
+}) => {
   const fadeInCloseButtonClass = isMenuOpen ? 'navbutton_active' : ''
 
   return (
     <button
       type='button'
       className={`navbutton ${fadeInCloseButtonClass}`}
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      onClick={() => onNavButtonClick}
     >
       <span className='navbutton__line'></span>
       <span className='navbutton__line'></span>

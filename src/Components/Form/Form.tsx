@@ -10,8 +10,14 @@ const Form: React.FC = () => {
     cvc: '',
   })
 
-  const isButtonDisabled = !meta.isTouched || (meta.isTouched && meta.error)
+  const isButtonDisabled =
+    meta.error ||
+    values.cardNumber === '' ||
+    values.expiryDate === '' ||
+    values.cvc === ''
   const disabledButtonClass = isButtonDisabled ? 'form__btn_disabled' : ''
+
+  console.log(isButtonDisabled)
 
   const handleChange = (event: Event) => {
     const target = event.target as HTMLInputElement
@@ -33,7 +39,9 @@ const Form: React.FC = () => {
   return (
     <form className='form' name='form' onSubmit={handleSubmit}>
       <div className='form__fieldset'>
-        <label className='form__lable'>Card details</label>
+        <label className='form__lable' htmlFor='cardNumber'>
+          Card details
+        </label>
         <input
           className={`form__input `}
           {...getCardNumberProps({ onChange: handleChange })}
@@ -44,7 +52,9 @@ const Form: React.FC = () => {
       </div>
       <div className='form__inputs-group'>
         <div className='form__fieldset'>
-          <label className='form__lable'>Expiry</label>
+          <label className='form__lable' htmlFor='ExpiryDate'>
+            Expiry
+          </label>
           <input
             className={`form__input form__input-small `}
             {...getExpiryDateProps({ onChange: handleChange })}
@@ -54,7 +64,9 @@ const Form: React.FC = () => {
           {meta.isTouched && meta.error && <span>Error: {meta.error}</span>}
         </div>
         <div className='form__fieldset'>
-          <label className='form__lable'>CVC</label>
+          <label className='form__lable' htmlFor='cvc'>
+            CVC
+          </label>
           <input
             className={`form__input form__input-small `}
             {...getCVCProps({ onChange: handleChange })}

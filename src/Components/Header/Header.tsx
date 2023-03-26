@@ -3,13 +3,16 @@ import Menu from '../Menu/Menu'
 import NavButton from '../NavButton/NavButton'
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-  const title = isMenuOpen ? 'Menu' : 'Register Card Form'
+  const [isActive, setisActive] = React.useState(false)
+  const title = isActive ? 'Menu' : 'Register Card Form'
 
   return (
     <header className='header'>
-      <Menu navItems={[{ to: '', title: '' }]} isMenuOpen={isMenuOpen} />
-      <NavButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Menu navItems={[{ to: '', title: '' }]} isMenuOpen={isActive} />
+      <NavButton
+        isMenuOpen={isActive}
+        onNavButtonClick={() => setisActive(!isActive)}
+      />
       <h1 className='header__title'>{title}</h1>
     </header>
   )

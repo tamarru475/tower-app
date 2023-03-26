@@ -1,7 +1,9 @@
 import React from 'react'
 
+type NavItem = { to: string; title: string }
+
 interface MenuProps {
-  navItems: [{ to: ''; title: '' }]
+  navItems: NavItem[]
   isMenuOpen: boolean
 }
 
