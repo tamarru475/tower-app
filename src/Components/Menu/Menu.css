@@ -1,0 +1,47 @@
+.nav {
+  position: fixed;
+  top: 10rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  width: 100vw;
+  height: 80vh;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  transition: all 0.3s linear;
+  z-index: 5;
+}
+
+.nav_fadein {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav__list {
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  gap: 16px;
+  padding-left: 16px;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+  color: #0000;
+}
+
+.nav__link:hover {
+  opacity: 0.8;
+}

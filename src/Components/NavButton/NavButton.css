@@ -1,0 +1,42 @@
+.navbutton {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  width: 2.4rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.5s ease-out;
+}
+
+.navbutton:hover {
+  opacity: 0.6;
+}
+
+.navbutton .navbutton__line {
+  width: 2.4rem;
+  height: 0.3rem;
+  margin: 0 0 0.5rem 0;
+  background: #000;
+  transition: all 0.5s ease-out;
+}
+
+.navbutton__line:hover {
+  opacity: 0.85;
+}
+
+.navbutton_active {
+  transform: rotate(180deg);
+  margin-right: 2.4rem;
+}
+
+.navbutton_active .navbutton__line:nth-child(1) {
+  transform: rotate(45deg) translate(2px, 4px);
+}
+
+.navbutton_active .navbutton__line:nth-child(2) {
+  transform: rotate(-45deg) translate(2px, -4px);
+}
+
+.navbutton_active .navbutton__line:nth-child(3) {
+  opacity: 0;
+}
