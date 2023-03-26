@@ -1,0 +1,10 @@
+@import url('./vendor/normalize.css');
+@import url('./Fonts/fonts.css');
+@import url('./App/App.css');
+@import url('./Components/Header/Header.css');
+@import url('./Components/Menu/Menu.css');
+@import url('./Components/NavButton/NavButton.css');
+@import url('./Pages/Main.css');
+@import url('./Components/Greeting/Greeting.css');
+@import url('./Components/Form/Form.css');
+@import url('./Components/PopupNav/PopupNav.css');
