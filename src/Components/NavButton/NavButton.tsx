@@ -15,7 +15,7 @@ const NavButton: React.FC<NavButtonProps> = ({
     <button
       type='button'
       className={`navbutton ${fadeInCloseButtonClass}`}
-      onClick={() => onNavButtonClick}
+      onClick={() => onNavButtonClick()}
     >
       <span className='navbutton__line'></span>
       <span className='navbutton__line'></span>
