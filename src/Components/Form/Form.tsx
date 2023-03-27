@@ -17,8 +17,6 @@ const Form: React.FC = () => {
     values.cvc === ''
   const disabledButtonClass = isButtonDisabled ? 'form__btn_disabled' : ''
 
-  console.log(isButtonDisabled)
-
   const handleChange = (event: Event) => {
     const target = event.target as HTMLInputElement
     const name = target?.name
